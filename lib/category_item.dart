@@ -5,13 +5,18 @@ class CategoryItem extends StatelessWidget {
   final Color color;
 
   CategoryItem(this.title, this.color);
+
+  void selectCategory(BuildContext ctx){
+    Navigator.of(ctx)
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => null,
+      onTap: () => selectCategory,
       splashColor: Theme.of(context).primaryColor,
       child: Container(
-          padding: const EdgeInsets.all(15),
+          padding: const EdgeInsets.all(10),
           child: Text(
             title,
             style: Theme.of(context).textTheme.headline6,
