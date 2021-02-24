@@ -8,9 +8,10 @@ class CategoryMealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //here we could write Map<String, String> if all the pairs were strings
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
-    //here we could write Map<String, String> if all the pairs were
+
     final categoryTitle = routeArgs['title'];
     final categoryId = routeArgs['id'];
     final categoryColor = routeArgs['color'];
