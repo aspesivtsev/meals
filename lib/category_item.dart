@@ -19,24 +19,48 @@ class CategoryItem extends StatelessWidget {
       onTap: () => selectCategory(context),
       //this is border and splash on tap
       borderRadius: BorderRadius.circular(20),
-      splashColor: Theme.of(context).primaryColor,
+      splashColor: Colors.red,
       child: Container(
           padding: const EdgeInsets.all(10),
           child: Center(
             child: Text(
               title,
               style: Theme.of(context).textTheme.headline6,
+              //TextStyle(color: color),
               textAlign: TextAlign.center,
             ),
           ),
           decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              border: Border.all(
-                color: color,
-                width: 0.6,
+            gradient: LinearGradient(
+                colors: [color.withOpacity(0.6), color],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomLeft),
+            //color: color,
+            //color: Colors.grey[300],
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            //this is colored border of the button
+            border: Border.all(
+              color: color,
+              width: 1,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.blueGrey.withOpacity(0.3),
+                spreadRadius: 2,
+                blurRadius: 4,
+                offset: Offset(4, 4), // changes position of shadow
               ),
-              boxShadow: [
+            ],
+            /*[
+              
+              BoxShadow(
+                  color: Colors.white,
+                  offset: Offset(-4.0, -4.0),
+                  blurRadius: 15.0,
+                  spreadRadius: 1.0),
+            ],*/
+            //flatbutton shading
+            /*boxShadow: [
                 BoxShadow(
                     color: Colors.grey[500],
                     offset: Offset(4.0, 4.0),
@@ -47,7 +71,8 @@ class CategoryItem extends StatelessWidget {
                     offset: Offset(-4.0, -4.0),
                     blurRadius: 15.0,
                     spreadRadius: 1.0),
-              ])),
+              ]*/
+          )),
     );
   }
 }
