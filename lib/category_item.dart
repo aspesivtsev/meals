@@ -32,7 +32,7 @@ class CategoryItem extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [color.withOpacity(0.6), color],
+                colors: [color.withOpacity(0.65), color],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomLeft),
             //color: color,
@@ -40,8 +40,8 @@ class CategoryItem extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20)),
             //this is colored border of the button
             border: Border.all(
-              color: color,
-              width: 1,
+              color: Colors.grey,
+              width: 2,
             ),
             boxShadow: [
               BoxShadow(
