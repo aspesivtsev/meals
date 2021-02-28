@@ -13,7 +13,7 @@ class CategoryMealsScreen extends StatelessWidget {
         ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
 
     final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id'];
+    //final categoryId = routeArgs['id'];
     final categoryColor = routeArgs['color'];
 
     return Scaffold(
@@ -22,7 +22,10 @@ class CategoryMealsScreen extends StatelessWidget {
         backgroundColor: categoryColor,
       ),
       body: Center(
-        child: Text('The new screen'),
+        child: Text(
+          categoryTitle,
+          style: Theme.of(context).textTheme.headline6,
+        ),
       ),
     );
   }

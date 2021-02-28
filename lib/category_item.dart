@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './category_meals_screen.dart';
+//import './category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -32,16 +32,16 @@ class CategoryItem extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [color.withOpacity(0.65), color],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomLeft),
+                colors: [color.withOpacity(0.55), color],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter),
             //color: color,
             //color: Colors.grey[300],
             borderRadius: BorderRadius.all(Radius.circular(20)),
             //this is colored border of the button
             border: Border.all(
-              color: Colors.grey,
-              width: 2,
+              color: Colors.blueGrey,
+              width: 0.5,
             ),
             boxShadow: [
               BoxShadow(
