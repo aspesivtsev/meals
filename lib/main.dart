@@ -23,15 +23,29 @@ class MyApp extends StatelessWidget {
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
               headline6: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
                 fontFamily: 'RobotoCondensed',
                 fontWeight: FontWeight.bold,
+                shadows: [
+                  const Shadow(
+                    blurRadius: 15.0,
+                    color: Colors.white,
+                    offset: Offset(0, 0),
+                  ),
+                  const Shadow(
+                    blurRadius: 2.0,
+                    color: Colors.white,
+                    offset: Offset(0, 0),
+                  ),
+                ],
               ))),
 
       //home: MyHomePage(),
-      home: CategoriesScreen(),
+      //home: CategoriesScreen(),
+      initialRoute: '/',
       routes: {
-        '/category-meals': (ctx) => CategoryMealsScreen(),
+        '/': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
       },
     );
   }

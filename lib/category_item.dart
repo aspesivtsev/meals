@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import './category_meals_screen.dart';
+import './category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -9,7 +9,7 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('/category-meals',
+    Navigator.of(ctx).pushNamed(CategoryMealsScreen.routeName,
         arguments: {'id': id, 'title': title, 'color': color});
   }
 
@@ -48,7 +48,7 @@ class CategoryItem extends StatelessWidget {
                 color: Colors.blueGrey.withOpacity(0.3),
                 spreadRadius: 2,
                 blurRadius: 4,
-                offset: Offset(4, 4), // changes position of shadow
+                offset: Offset(4, 8), // changes position of shadow
               ),
             ],
             /*[
