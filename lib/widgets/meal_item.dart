@@ -33,13 +33,22 @@ class MealItem extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15)),
-
                   child: Image.network(
                     imageUrl,
                     height: 250,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ), //fit gives nice gropping to fit into the area specified
+                ),
+                Positioned(
+                  bottom: 20,
+                  right: 10,
+                  child: Text(
+                    title,
+                    style: TextStyle(fontSize: 26, color: Colors.white),
+                    softWrap: true,
+                    overflow: TextOverflow.fade,
+                  ),
                 ),
               ],
             ),
