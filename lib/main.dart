@@ -51,6 +51,7 @@ class MyApp extends StatelessWidget {
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
       onUnknownRoute: (settings) {
+        //if all the routes fail it will show the main screen
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
