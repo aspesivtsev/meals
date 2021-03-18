@@ -9,7 +9,7 @@ class MealDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final _id =
-        ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
     final mealId = _id['id'];
     final mealColor = _id['color'];
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);

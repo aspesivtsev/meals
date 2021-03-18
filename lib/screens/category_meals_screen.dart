@@ -13,7 +13,7 @@ class CategoryMealsScreen extends StatelessWidget {
     //here we could write Map<String, String> if all the pairs were strings
     //ModalRoute helps to pass the parameters throughout the screens
     final routeArgs =
-        ModalRoute.of(context).settings.arguments as Map<String, dynamic>;
+        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 
     final categoryTitle = routeArgs['title'];
     final categoryColor = routeArgs['color'];

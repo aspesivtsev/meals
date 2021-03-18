@@ -12,13 +12,13 @@ class MealItem extends StatelessWidget {
   final Color color;
 
   MealItem(
-      {@required this.id,
-      @required this.title,
-      @required this.imageUrl,
-      @required this.duration,
-      @required this.complexity,
-      @required this.affordability,
-      @required this.color});
+      {required this.id,
+      required this.title,
+      required this.imageUrl,
+      required this.duration,
+      required this.complexity,
+      required this.affordability,
+      required this.color});
 
 //selecting the enum text variant
   String get complexityText {
