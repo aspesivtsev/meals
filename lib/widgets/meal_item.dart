@@ -25,13 +25,13 @@ class MealItem extends StatelessWidget {
     switch (complexity) {
       case Complexity.Simple:
         return 'Simple';
-        break;
+      //break;
       case Complexity.Challenging:
         return 'Challenging';
-        break;
+      //break;
       case Complexity.Hard:
         return 'Hard';
-        break;
+      //break;
       default:
         return 'Unknown';
     }
@@ -41,13 +41,13 @@ class MealItem extends StatelessWidget {
     switch (affordability) {
       case Affordability.Affordable:
         return 'Affordable';
-        break;
+      //break; //in older versions it is better to seperate returns with break, just to make sure that only one selection is executed
       case Affordability.Luxurious:
         return 'Expensive';
-        break;
+      //break;
       case Affordability.Pricey:
         return 'Pricey';
-        break;
+      //break;
       default:
         return 'Unknown';
     }
