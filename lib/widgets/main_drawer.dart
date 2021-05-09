@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MainDrawer extends StatelessWidget {
-  Widget buildListTile(String title, IconData icon) {
+  Widget buildListTile(
+      final String title, final IconData icon, final VoidCallback tapHandler) {
     return ListTile(
       leading: Icon(
         icon,
@@ -14,7 +15,7 @@ class MainDrawer extends StatelessWidget {
             fontSize: 24,
             fontWeight: FontWeight.bold),
       ),
-      onTap: () {},
+      onTap: tapHandler,
     );
   }
 
@@ -40,12 +41,11 @@ class MainDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          buildListTile('Meals', Icons.restaurant),
-<<<<<<< HEAD
-          buildListTile('Filters', Icons.settings),
-=======
-          buildListTile('Favorites', Icons.favorite)
->>>>>>> b5044dd3add0b252a6829a05d153cad3c0c39ed8
+          buildListTile('Meals', Icons.restaurant, () {
+            Navigator.of(context).pushNamed('/');
+          }),
+          buildListTile('Filters', Icons.settings, () {}),
+          buildListTile('Favorites', Icons.favorite, () {})
         ],
       ),
     );
