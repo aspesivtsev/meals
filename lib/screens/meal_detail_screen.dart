@@ -91,6 +91,8 @@ class MealDetailScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.delete),
         onPressed: () {
+          //при клике на кнопку мы закрываем окно и передаем mealId переменную обратно в
+          //файл meal_item функцию selectMeal которая вызывала этот всплывающий экран изначально
           Navigator.of(context).pop(mealId);
         },
       ),

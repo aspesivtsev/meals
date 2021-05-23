@@ -10,15 +10,18 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final Color color;
+  final Function removeItem;
 
-  MealItem(
-      {required this.id,
-      required this.title,
-      required this.imageUrl,
-      required this.duration,
-      required this.complexity,
-      required this.affordability,
-      required this.color});
+  MealItem({
+    required this.id,
+    required this.title,
+    required this.imageUrl,
+    required this.duration,
+    required this.complexity,
+    required this.affordability,
+    required this.color,
+    required this.removeItem,
+  });
 
 //selecting the enum text variant
   String get complexityText {
@@ -53,10 +56,14 @@ class MealItem extends StatelessWidget {
     }
   }
 
+//функция которая открывает детальное окно, передавая аргументы, а потом при закрытии того окна получает обратно mealId
+//и записывает его в переменную popedData
   void selectMeal(BuildContext context) {
     Navigator.of(context).pushNamed(MealDetailScreen.routeName,
-        arguments: {'id': id, 'color': color}).then((result) {
-      print(result);
+        arguments: {'id': id, 'color': color}).then((popedData) {
+      if (popedData != null) {
+        removeItem(popedData);
+      }
     });
   }
 
