@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+
 //import '../dummy_data.dart';
 import '../models/meal.dart';
 import '../widgets/meal_item.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
   static const routeName = '/category-meals';
-  final availableMeals;
-  CategoryMealsScreen(this.availableMeals)
+  final List<Meal> availableMeals;
+  CategoryMealsScreen(this.availableMeals);
+
   @override
   _CategoryMealsScreenState createState() => _CategoryMealsScreenState();
 }
@@ -22,6 +24,8 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   }
 
   @override
+  //используется didChangeDependencies метод потому что в InitState'е еще не создано объекта modal route и context и в нем нет данных
+  //так как объект еще не инициирован по факту
   void didChangeDependencies() {
     //here we could write Map<String, String> if all the pairs were strings
     //ModalRoute helps to pass the parameters throughout the screens
@@ -32,6 +36,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     categoryColor = routeArgs['color'];
     final categoryId = routeArgs['id'];
     //looping thru all the list of DUMMY_MEALS in dummy_data.dart with filtering on category
+    //displayedMeals = DUMMY_MEALS.where((meal) {return meal.categories.contains(categoryId);}).toList();
     displayedMeals = widget.availableMeals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();

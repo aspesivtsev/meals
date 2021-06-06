@@ -3,7 +3,7 @@ import '../widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
   static const routeName = '/filters';
-  final VoidCallback saveFilters;
+  final Function saveFilters;
   FiltersScreen(this.saveFilters);
 
   @override
@@ -32,9 +32,17 @@ class _FiltersScreenState extends State<FiltersScreen> {
           title: Text('Your Filters'),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.save),
-              onPressed: widget.saveFilters,
-            ),
+                icon: Icon(Icons.save),
+                //added ()=> here, this was not in course
+                onPressed: () {
+                  final selectedFilters = {
+                    'gluten': _glutenFree,
+                    'lactose': _lactoseFree,
+                    'vegan': _vegan,
+                    'vegetarian': _vegetarian,
+                  };
+                  widget.saveFilters(selectedFilters);
+                }),
           ],
         ),
         drawer: MainDrawer(),
