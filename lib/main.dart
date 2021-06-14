@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, bool> _filters = {
+  Map<String, bool?> _filters = {
     'gluten': false,
     'lactose': false,
     'vegan': false,
@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
 
   List<Meal> _availableMeals = DUMMY_MEALS;
 
-  void _setFilters(Map<String, bool> filterData) {
+  void _setFilters(Map<String, bool?> filterData) {
     setState(() {
       _filters = filterData;
 
