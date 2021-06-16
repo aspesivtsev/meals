@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-//import '../dummy_data.dart';
+import '../dummy_data.dart';
 import '../models/meal.dart';
 import '../widgets/meal_item.dart';
 
@@ -14,9 +14,13 @@ class CategoryMealsScreen extends StatefulWidget {
 }
 
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
-  late String categoryTitle;
-  late Color categoryColor;
-  late List<Meal> displayedMeals;
+  String categoryTitle = 'ass';
+  Color categoryColor = Colors.pink;
+  List<Meal> displayedMeals = DUMMY_MEALS;
+
+  //late final String categoryTitle;
+  //late final Color categoryColor;
+  //late final List<Meal> displayedMeals;
 
   @override
   void initState() {
