@@ -5,6 +5,12 @@ class MealDetailScreen extends StatelessWidget {
   //const MealDetailScreen({Key key}) : super(key: key);
   static const routeName = '/meal-detail';
 
+  //final void Function(String)? toggleFavorite;
+  final void Function(String) toggleFavorite;
+  final Function(String) isFavorite;
+
+  MealDetailScreen(this.toggleFavorite, this.isFavorite);
+
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 15),
@@ -33,8 +39,9 @@ class MealDetailScreen extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final _id =
         ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    final mealId = _id['id'];
+    //final mealId = ModalRoute.of(context)!.settings.arguments as String;
     final mealColor = _id['color'];
+    final mealId = _id['id'];
     final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
@@ -89,12 +96,11 @@ class MealDetailScreen extends StatelessWidget {
       ),
       //Center(child: Text('Meal - $mealId'),),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.delete),
-        onPressed: () {
-          //при клике на кнопку мы закрываем окно и передаем mealId переменную обратно в
-          //файл meal_item функцию selectMeal которая вызывала этот всплывающий экран изначально
-          Navigator.of(context).pop(mealId);
-        },
+        child: Icon(isFavorite(mealId) ? Icons.star : Icons.star_border),
+        onPressed: () => toggleFavorite(mealId),
+        //при клике на кнопку мы закрываем окно и передаем mealId переменную обратно в
+        //файл meal_item функцию selectMeal которая вызывала этот всплывающий экран изначально
+        //(){Navigator.of(context).pop(mealId);},
       ),
     );
   }

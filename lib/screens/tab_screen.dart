@@ -2,20 +2,31 @@ import 'package:flutter/material.dart';
 import './categories_screen.dart';
 import './favorites_screen.dart';
 import '../widgets/main_drawer.dart';
+import '../models/meal.dart';
 
 class TabsScreen extends StatefulWidget {
+  final List<Meal> favoriteMeals;
+
+  TabsScreen(this.favoriteMeals);
+
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  //this is a Map list of available tabs on the screen with the corresponding lables
-  final List<Map<String, dynamic>> _pages = [
-    {'page': CategoriesScreen(), 'title': 'Categories'},
-    {'page': FavoritesScreen(), 'title': 'Your Favorite'},
-  ];
+  late List<Map<String, dynamic>> _pages;
 
   int _selectedPageIndex = 0;
+
+  @override
+  void initState() {
+    //this is a Map list of available tabs on the screen with the corresponding lables
+    _pages = [
+      {'page': CategoriesScreen(), 'title': 'Categories'},
+      {'page': FavoritesScreen(widget.favoriteMeals), 'title': 'Your Favorite'},
+    ];
+    super.initState();
+  }
 
   void _selectPage(int index) {
     //this is changing of the screen and redrawing on tab click
