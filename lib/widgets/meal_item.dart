@@ -10,7 +10,7 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final Color color;
-  final Function removeItem;
+  //final Function removeItem;
 
   MealItem({
     required this.id,
@@ -20,7 +20,7 @@ class MealItem extends StatelessWidget {
     required this.complexity,
     required this.affordability,
     required this.color,
-    required this.removeItem,
+    //required this.removeItem,
   });
 
 //selecting the enum text variant
@@ -62,7 +62,7 @@ class MealItem extends StatelessWidget {
     Navigator.of(context).pushNamed(MealDetailScreen.routeName,
         arguments: {'id': id, 'color': color}).then((popedData) {
       if (popedData != null) {
-        removeItem(popedData);
+        //removeItem(popedData);
       }
     });
   }
